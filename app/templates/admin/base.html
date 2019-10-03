@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project Imago Admin</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+  <script src="/static/js/initFirebase.js"></script>
+  <script src="/static/js/admin/signInOutWithGoogle.js"></script>
+  <script src="/static/js/admin/script.js"></script>
+
+</head>
+<body>
+    {% if not auth_context %}
+        <div class="container">
+            <a id="sign-in-control" href="/signin">Sign in with <i class="fab fa-google"></i></a>
+        </div>
+    {% else %}
+    <nav class="navbar has-background-dark">
+        <div class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item has-text-light" href="/">ADMIN</a>
+            </div>
+
+            {% block navbar_end %}
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <a id="username" class="has-text-white">{{ auth_context.get('username') }} ({{ auth_context.get('email') }})</a>
+                </div>
+                <div class="navbar-item">
+                    <a id="sign-out-control" class="has-text-white" onclick="signOutWithGoogle()"><i class="fas fa-sign-out-alt"></i></a>
+                </div>
+            </div>
+            {% endblock %}
+        </div>
+    </nav>
+    {% block content %}{% endblock %}
+    {% endif %}
+</body>
+</html>

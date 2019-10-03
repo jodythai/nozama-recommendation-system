@@ -1,0 +1,11 @@
+.vscode
+__pycache__
+.gcloudignore
+env
+.env
+.pyc
+functions/recommend
+app/app.yaml
+app/firebase_config.json
+app/static/js/initFirebase.js
+fansipann-jody-firebase-adminsdk-boe4r-596dbdf4e8.json

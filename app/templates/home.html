@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container-fluid container-main-wrapper fixed-height">
+        <div class="row">
+            <div class="col">
+                <div class="container container-main">
+                    <div class="row">
+                        <div class="col col-main-intro">
+                            <div class="main-intro">
+                                <h1 class="title">Welcome to Nozama!</h1>
+                                <h2 class="subtitle">Give us a product photo, we will recommend 4 & 5 stars similar products from Amazon, that simple!</h2>
+                            </div>
+
+                            <div class="main-form">
+                                <div class="box-select-photo">
+                                    <!-- <h2 class="title">Upload your photo</h2> -->
+                                    <div id="img-preview-container" class="hidden">
+                                        <img src="#" alt="" id="preview-image">
+                                    </div>
+                                </div>
+                                
+                                <div id="form-upload-image-container">
+                                    <form action="post" id="form-upload-image" enctype="multipart/form-data">
+                                        <input type="file" name="file" id="file" class="hidden">
+                                        <a href="#" class="btn btn-primary btn-lg" id="btn-select-image">Select your photo</a>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row hidden" id="recommendation-results">
+                        <div class="col">
+                            <div class="products-list">
+                                <div class="card-columns" id="products_html">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="section-recommendation-results-buttons hidden">
+        <div class="container">
+                <div class="your-photo"><img src="" alt="" /></div>
+                <a href="#" class="btn btn-outline-light btn-select-new-image">Select new photo</a>
+        </div>
+    </section>
+
+    <section class="section-main-buttons hidden">
+        <p>Please select the area covering your product and click Upload.</p>
+        <div class="buttons">
+            <a href="#" class="btn btn-outline-light btn-select-new-image">Select new photo</a>
+            <a href="#" class="btn btn-primary" id="btn-upload-image">Upload</a>
+        </div>
+    </section>
+
+    <div class="loading hidden">
+        <p><img src="/static/img/loading.gif" alt="Loading..."></p>
+        <p>Hello there!<br /> I'm Nozama's Pinky AI<br /> I'm working hard for your service...<br />Beep-Boop-Beep-Boop</p>
+    </div>
+{% endblock %}

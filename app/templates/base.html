@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project Nozama</title>
+  <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Raleway&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/css/cropper.css">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <!-- <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script> -->
+
+</head>
+<body class="page page-main">
+    <nav class="main-nav">
+        <div class="nav-logo"><a href="/" class="logo"><span><img src="/static/img/nozama_logo.png" alt="Nozama"></span></a></div>
+    </nav>
+
+
+    {% block content %}{% endblock %}
+
+    <footer>
+        <p>Copyright 2019.</p>
+        <p>A project by <br />
+            <a href="https://github.com/jodythai" class="jody nicer-font-please">Jody da Coderschool</a></p>
+    </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+    <script src="/static/js/initFirebase.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.min.js"></script>
+    <script src="/static/js/vendor/cropper.min.js"></script>
+    <script src="/static/js/vendor/jquery-cropper.min.js"></script>
+    <script src="/static/js/script.js"></script>
+</body>
+</html>

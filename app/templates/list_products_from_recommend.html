@@ -1,0 +1,12 @@
+{% for product in products %}
+    <div class="card">
+        <a href="https://www.amazon.com/dp/{{ product.asin }}">
+            <img src="{{ product.imUrl }}" class="card-img-top" alt="{{ product.title }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ product.title }}</h5>
+                <p class="card-text">{{ product.category }}</p>
+                <p class="card-text">Rating: {{ product.rating }}</p>
+            </div>
+        </a>
+    </div>
+{% endfor %}
