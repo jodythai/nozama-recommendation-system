@@ -1,6 +1,6 @@
 # Nozama: Image-based Product Recommendation System
 
-![](https://i.imgur.com/DgVGLUy.png)
+![Uploading file..._pmvrluony]()
 
 Online shopping is becoming more and more popular nowadays due to its convenience. However, finding a product is still a time-consuming and less interesting part of the online shopping journey because users are still required to type keywords describing the products as well as getting mismatched results due to the difference between users' keywords and products' description from the sellers. 
 
