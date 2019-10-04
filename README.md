@@ -1,6 +1,6 @@
 # Nozama: Image-based Product Recommendation System
 
-![Uploading file..._pmvrluony]()
+![](https://i.imgur.com/Ch8DTva.png)
 
 Online shopping is becoming more and more popular nowadays due to its convenience. However, finding a product is still a time-consuming and less interesting part of the online shopping journey because users are still required to type keywords describing the products as well as getting mismatched results due to the difference between users' keywords and products' description from the sellers. 
 
@@ -266,6 +266,7 @@ This project made possible by the following amazing library:
 * [jQuery](https://jquery.com/)
 * [CropperJs](https://fengyuanchen.github.io/cropperjs/)
 * [TensorFlow](https://www.tensorflow.org/)
+* [Annoy](https://github.com/spotify/annoy)
 
 Reference for Machine Learning solution:
 
