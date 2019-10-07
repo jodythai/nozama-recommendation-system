@@ -13,7 +13,7 @@ from flask import Blueprint, request, jsonify
 from google.cloud import storage
 from annoy import AnnoyIndex
 
-BUCKET = os.environ.get('GSC_BUCKET')
+BUCKET = 'my_bucket-1' # os.environ.get('GCS_BUCKET')
 USER_UPLOAD_FOLDER = 'uploads'
 storage_client = storage.Client()
 
@@ -162,6 +162,8 @@ def recommend_v2(request):
         request_time = time.time()
         
         data = request.get_json()
+        print('finished getting request json')
+
         img_raw = data['data-uri'].encode()
 
         image, img_decode = preprocess_image(img_raw)
