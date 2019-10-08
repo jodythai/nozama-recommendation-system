@@ -5,7 +5,11 @@
             <div class="card-body">
                 <h5 class="card-title">{{ product.title }}</h5>
                 <p class="card-text">{{ product.category }}</p>
-                <p class="card-text">Rating: {{ product.rating }}</p>
+                {% if product.rating != 'nan' %}
+                <div class="card-rating">
+                    <span class="rating" data-score="{{ product.rating }}"></span>
+                </div>
+                {% endif %}
             </div>
         </a>
     </div>

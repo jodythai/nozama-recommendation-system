@@ -1,3 +1,4 @@
+// Set up the ajax loading behaviour
 $.ajaxSetup({
     beforeSend: function() {
        $('.loading').removeClass('hidden');
@@ -9,17 +10,6 @@ $.ajaxSetup({
       $('.loading').addClass('hidden');
     }
 });
-
-function submitUploadForm() {
-    let image = document.getElementById('image').value;
-    if (!name || !description || !price || !parseFloat(price) || !image) {
-      return alert(`Some fields might be empty or incorrect. Please make ` + 
-                   `sure that all the required fields have been completed ` + 
-                   `correctly, and an image has been uploaded.`);
-    }
-
-    document.getElementById('upload-form').submit();
-};
 
 PREVIEW_IMAGE_HEIGHT = 400
 // Show the selected image to the UI before uploading
@@ -40,6 +30,7 @@ function readURL(input) {
     reader.readAsDataURL(input.files[0]);
 }
 
+// Setup Image Cropper
 var imageCropper = $('#preview-image');
 function initImageCropper() {
     
@@ -54,7 +45,8 @@ function initImageCropper() {
             $('#btn-select-image').addClass('hidden');
             $('.section-main-buttons').removeClass('hidden');
             $('.container-main-wrapper').removeClass('fixed-height');
-            $(window).scrollTo('#img-preview-container', 600);
+            mainNavHeight = $('.main-nav').height();
+            $(window).scrollTo('#img-preview-container', 600, {interrupt: true, offset: {top:-(mainNavHeight + 50)}});
         }
     }).cropper(cropperOptions);
 }
@@ -63,6 +55,7 @@ $(function () {
     'use strict';
     let uploadedImageType = ''
 
+    // Handle behaviour of input file
     $("#file").on('change', function() {
         if (this.files && this.files[0]) {
             uploadedImageType = this.files[0].type; 
@@ -76,6 +69,7 @@ $(function () {
         $('#file').trigger('click')
     });
 
+    // Handle upload file for recommendation task
     $('#btn-upload-image').on('click', function (e) {
         e.preventDefault();
 
@@ -114,6 +108,14 @@ $(function () {
                     $('.section-main-buttons').addClass('hidden');
                     $('.section-recommendation-results-buttons').removeClass('hidden');
                     $('.section-recommendation-results-buttons .your-photo img').attr('src', croppedImage);
+                    
+                    // Setting Stars Ratings
+                    $('.rating').raty({ readOnly: true, 
+                                        score: function() {
+                                            return $(this).attr('data-score');
+                                        },
+                                        path: 'static/js/vendor/raty/images'
+                    });
                 }
             });
         }

@@ -5,25 +5,54 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Project Nozama</title>
   <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Raleway&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/static/css/bootstrap/bootstrap.min.css">
-  <link rel="stylesheet" href="/static/css/cropper.css">
+  <link rel="stylesheet" href="/static/css/vendor/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/css/vendor/cropper.css">
+  <link rel="stylesheet" href="/static/js/vendor/raty/jquery.raty.css">
+  <link rel="stylesheet" href="/static/css/vendor/fancybox/jquery.fancybox.min.css">
   <link rel="stylesheet" href="/static/css/style.css">
-  <!-- <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script> -->
 
 </head>
 <body class="page page-main">
     <nav class="main-nav">
+        <div class="nav-left">
+            <a href="#" class="btn btn-outline-light">How to use</a>
+        </div>
         <div class="nav-logo"><a href="/" class="logo"><span><img src="/static/img/nozama_logo.png" alt="Nozama"></span></a></div>
+        <div class="nav-right">
+            <a href="#" class="btn btn-how-to-use btn-outline-light" data-fancybox data-src="#dialog-how-to-use">How to use</a>
+        </div>
     </nav>
-
 
     {% block content %}{% endblock %}
 
     <footer>
         <p>Copyright 2019.</p>
         <p>A project by <br />
-            <a href="https://github.com/jodythai" class="jody nicer-font-please">Jody da Coderschool</a></p>
+            <a href="https://github.com/jodythai" class="jody nicer-font-please">Binh-Duong Thai</a>
+        </p>
     </footer>
+
+    <div style="display: none;" id="dialog-how-to-use">
+        <h2>How to use</h2>
+
+        <div class="instructions">
+            <ul>
+                <li><p><img src="static/img/step-1.jpg" alt=""><span>Step 1</span></p><h5>Click on "Select Your Photo" button, then select your photo.</h5></li>
+                <li><p><img src="static/img/step-2.jpg" alt=""><span>Step 2</span></p><h5>Crop the image to select the product you want.</h5></li>
+                <li><p><img src="static/img/step-3.jpg" alt=""><span>Step 3</span></p><h5>Click "Upload" button.</h5></li>
+            </ul>
+        </div>
+        <p>Currently the web app supports the following product's categories:</p>
+        <div class="categories">
+            <ul>
+                <li><img src="static/img/clothing.jpg" alt="Clothing"><h5>Clothing</h5></li>
+                <li><img src="static/img/pets.jpg" alt="Pets"><h5>Pets</h5></li>
+                <li><img src="static/img/shoes.jpg" alt="Clothing"><h5>Shoes</h5></li>
+                <li><img src="static/img/watches.jpg" alt="Clothing"><h5>Watches</h5></li>
+                <li><img src="static/img/home_kitchen.jpg" alt="Clothing"><h5>Home & Kitchen</h5></li>
+            </ul>
+        </div>
+    </div>
 
     <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
     <script src="/static/js/initFirebase.js"></script>
@@ -31,6 +60,8 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.min.js"></script>
     <script src="/static/js/vendor/cropper.min.js"></script>
     <script src="/static/js/vendor/jquery-cropper.min.js"></script>
+    <script src="/static/js/vendor/raty/jquery.raty.js"></script>
+    <script src="/static/js/vendor/fancybox/jquery.fancybox.min.js"></script>
     <script src="/static/js/script.js"></script>
 </body>
 </html>

@@ -8,17 +8,14 @@ from models import product_catalog, user_requests
 
 recommend = Blueprint('recommend', __name__)
 
-CLOUD_FUNC_RECOMMEND_URL = 'https://asia-east2-fansipann-jody.cloudfunctions.net/recommend_v2'
+CLOUD_FUNC_RECOMMEND_URL = ''
 
 @recommend.route('/recommend', methods=['GET', 'POST'])
 def handle_recommend():  
 
     if request.method == 'POST':
         data = request.get_json()
-        print('begin sending post request to cloud function')
         response = requests.post(CLOUD_FUNC_RECOMMEND_URL, json = data)
-        print('finish getting response from cloud function')
-
         response_dict = json.loads(response.text)
         top_k = response_dict['top_k']
 
