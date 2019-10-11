@@ -18,7 +18,7 @@ nav.main-nav {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 9999;
+    z-index: 999;
 }
 
 .nav-right {
@@ -98,11 +98,24 @@ nav.main-nav .btn-how-to-use {
 }
 
 #img-preview-container {
+    background: #c3cfe2;
+    background: linear-gradient(180deg, #c3cfe2 0%, #E2E8F2 100%);
+    padding: 2em;
     margin-bottom: 3em;
+    position: relative;
+}
+
+#img-preview-container .title {
+    margin: 0 0 1em;
+}
+
+.cropper-container {
+    margin: 0 auto;
 }
 
 .section-main-buttons {
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
     width: 100%;
     position: fixed;
     bottom: 0;
@@ -116,7 +129,7 @@ nav.main-nav .btn-how-to-use {
 
 .section-main-buttons p {
     text-align: center;
-    color: #fff;
+    color: #000;
 }
 
 .section-main-buttons .buttons {
@@ -147,7 +160,8 @@ nav.main-nav .btn-how-to-use {
 }
 
 .section-recommendation-results-buttons {
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
     width: 100%;
     max-height: 80px;
     position: fixed;
@@ -238,32 +252,47 @@ footer {
     transition: all 0.3s ease-in-out;
 }
 
-#dialog-how-to-use {
+.products-list .card .card-thumb {
+    overflow: hidden;
+}
+
+
+/* MODAL */
+
+.modal-dialog {
+    margin: 0.5rem auto;
+}
+
+#modal-how-to-use {
     padding: 1.5em 1em;
 }
 
-#dialog-how-to-use h2 {
+#modal-how-to-use .modal-dialog {
+    max-width: 90%;
+}
+
+#modal-how-to-use h2 {
     text-align: center;
     margin-bottom: .75em;
 }
 
-#dialog-how-to-use h3 {
+#modal-how-to-use h3 {
     font-size: 1.4em;
 }
 
-#dialog-how-to-use p {
+#modal-how-to-use p {
     margin-bottom: 0.5em;
     text-align: center;
 }
 
-#dialog-how-to-use .instructions ul {
+#modal-how-to-use .instructions ul {
     padding: 0;
     display: flex;
     justify-content: center;
     flex-wrap: nowrap;
 }
 
-#dialog-how-to-use .instructions ul li {
+#modal-how-to-use .instructions ul li {
     list-style: none;
     margin: 0 0 1em;
     padding: 0 2em;
@@ -273,13 +302,13 @@ footer {
     width: 35%;
 }
 
-#dialog-how-to-use .instructions ul li p {
+#modal-how-to-use .instructions ul li p {
     position: relative;
     width: 250px;
     margin: 0 auto;
 }
 
-#dialog-how-to-use .instructions ul li p span {
+#modal-how-to-use .instructions ul li p span {
     background: #fff;
     font-weight: bold;
     font-size: 1em;
@@ -289,17 +318,17 @@ footer {
     left: 0.5em;
 }
 
-#dialog-how-to-use .instructions ul li img {
+#modal-how-to-use .instructions ul li img {
     width: 100%;
 }
 
-#dialog-how-to-use .instructions ul li h5 {
+#modal-how-to-use .instructions ul li h5 {
     text-align: center;
     font-size: 1em;
     padding: 0.5em 0;
 }
 
-#dialog-how-to-use .categories ul {
+#modal-how-to-use .categories ul {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
@@ -308,19 +337,19 @@ footer {
     justify-content: space-around;
 }
 
-#dialog-how-to-use .categories ul li {
+#modal-how-to-use .categories ul li {
     display: flex;
     justify-content: center;
     flex-direction: column;
 }
 
-#dialog-how-to-use .categories ul li h5 {
+#modal-how-to-use .categories ul li h5 {
     font-weight: bold;
     font-family: 'Bree Serif', serif;
     text-align: center;
 }
 
-#dialog-how-to-use .categories ul li img {
+#modal-how-to-use .categories ul li img {
     height: 140px;
 }
 
@@ -356,22 +385,43 @@ footer {
     }
 
     .main-form {
-        width: 90%;
+        width: 100%;
+    }
+
+    .section-main-buttons {
+        padding: 1em;
+    }
+
+    .section-recommendation-results-buttons .your-photo {
+        margin-right: 4em;
     }
 
     .section-recommendation-results-buttons .btn {
         margin-left: auto;
     }
 
-    #dialog-how-to-use .instructions ul li {
+    .box-img-cropper {
         width: 100%;
     }
 
-    #dialog-how-to-use .categories ul li img {
+    #img-preview-container {
+        padding: 1em;
+    }
+
+    #img-preview-container .title {
+        margin: 0 0 .5em;
+    }
+
+    #modal-how-to-use .instructions ul li {
+        width: 100%;
+        padding: 0;
+    }
+
+    #modal-how-to-use .categories ul li img {
         height: 100px;
     }
 
-    #dialog-how-to-use .instructions ul {
+    #modal-how-to-use .instructions ul {
         flex-direction: column;
     }
 }

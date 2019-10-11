@@ -12,11 +12,12 @@
                             </div>
 
                             <div class="main-form">
-                                <div class="box-select-photo">
-                                    <!-- <h2 class="title">Upload your photo</h2> -->
-                                    <div id="img-preview-container" class="hidden">
+                                <div class="box-img-cropper hidden">
+                                    <div id="img-preview-container">
+                                        <h4 class="title">Crop the image</h4>
                                         <img src="#" alt="" id="preview-image">
                                     </div>
+                                    <!-- <div class="img-preview preview-lg hidden"></div> -->
                                 </div>
                                 
                                 <div id="form-upload-image-container">
@@ -45,14 +46,14 @@
     <section class="section-recommendation-results-buttons hidden">
         <div class="container">
                 <div class="your-photo"><img src="" alt="" /></div>
-                <a href="#" class="btn btn-outline-light btn-select-new-image">Select new photo</a>
+                <a href="#" class="btn btn-outline-primary btn-select-new-image">Select new photo</a>
         </div>
     </section>
 
     <section class="section-main-buttons hidden">
         <p>Please select the area covering your product and click Upload.</p>
         <div class="buttons">
-            <a href="#" class="btn btn-outline-light btn-select-new-image">Select new photo</a>
+            <a href="#" class="btn btn-outline-primary btn-select-new-image">Select new photo</a>
             <a href="#" class="btn btn-primary" id="btn-upload-image">Upload</a>
         </div>
     </section>
@@ -60,5 +61,40 @@
     <div class="loading hidden">
         <p><img src="/static/img/loading.gif" alt="Loading..."></p>
         <p>Hello there!<br /> I'm Nozama's Pinky AI<br /> I'm working hard for your service...<br />Beep-Boop-Beep-Boop</p>
+    </div>
+
+    <div style="display: none;" id="dialog-how-to-use">
+        
+    </div>
+
+    <div class="modal fade" id="modal-how-to-use" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h2>How to use</h2>
+
+                    <div class="instructions">
+                        <ul>
+                            <li><p><img src="static/img/step-1.jpg" alt=""><span>Step 1</span></p><h5>Click on "Select Your Photo" button, then select your photo.</h5></li>
+                            <li><p><img src="static/img/step-2.jpg" alt=""><span>Step 2</span></p><h5>Crop the image to select the product you want.</h5></li>
+                            <li><p><img src="static/img/step-3.jpg" alt=""><span>Step 3</span></p><h5>Click "Upload" button.</h5></li>
+                        </ul>
+                    </div>
+                    <p>Currently the web app supports the following product's categories:</p>
+                    <div class="categories">
+                        <ul>
+                            <li><img src="static/img/clothing.jpg" alt="Clothing"><h5>Clothing</h5></li>
+                            <li><img src="static/img/pets.jpg" alt="Pets"><h5>Pets</h5></li>
+                            <li><img src="static/img/shoes.jpg" alt="Clothing"><h5>Shoes</h5></li>
+                            <li><img src="static/img/watches.jpg" alt="Clothing"><h5>Watches</h5></li>
+                            <li><img src="static/img/home_kitchen.jpg" alt="Clothing"><h5>Home & Kitchen</h5></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 {% endblock %}

@@ -1,7 +1,7 @@
 {% for product in products %}
     <div class="card">
         <a href="https://www.amazon.com/dp/{{ product.asin }}">
-            <img src="{{ product.imUrl }}" class="card-img-top" alt="{{ product.title }}">
+            <div class="card-thumb"><img src="{{ product.imUrl }}" class="card-img-top" alt="{{ product.title }}"></div>
             <div class="card-body">
                 <h5 class="card-title">{{ product.title }}</h5>
                 <p class="card-text">{{ product.category }}</p>

@@ -22,8 +22,8 @@ function readURL(input) {
     }
 
     reader.addEventListener("load", function (e) {
-        $('#img-preview-container').removeClass('hidden');
-        $('#preview-image').attr('src', e.target.result).css('height', PREVIEW_IMAGE_HEIGHT);
+        $('.box-img-cropper').removeClass('hidden');
+        $('#preview-image').attr('src', e.target.result).css({height: PREVIEW_IMAGE_HEIGHT});
         initImageCropper();
     }, false);
     
@@ -35,8 +35,11 @@ var imageCropper = $('#preview-image');
 function initImageCropper() {
     
     var cropperOptions = {
-        crop: function (e) {
-        }
+        // preview: '.img-preview',
+        initialAspectRatio: 3/2,
+        viewMode: 2,
+        minContainerWidth: 300,
+        crop: function (e) {}
     };
 
     imageCropper.on({
@@ -46,14 +49,15 @@ function initImageCropper() {
             $('.section-main-buttons').removeClass('hidden');
             $('.container-main-wrapper').removeClass('fixed-height');
             mainNavHeight = $('.main-nav').height();
-            $(window).scrollTo('#img-preview-container', 600, {interrupt: true, offset: {top:-(mainNavHeight + 50)}});
+            $(window).scrollTo('.box-img-cropper', 400, {interrupt: true, offset: {top:-(mainNavHeight + 50)}});
         }
     }).cropper(cropperOptions);
 }
 
 $(function () {
     'use strict';
-    let uploadedImageType = ''
+    let uploadedImageType = '';
+    let modelHowToUse = $('#modal-how-to-use');
 
     // Handle behaviour of input file
     $("#file").on('change', function() {
@@ -69,6 +73,10 @@ $(function () {
         $('#file').trigger('click')
     });
 
+    $('.btn-how-to-use').on('click', function() {
+        modelHowToUse.modal('show');
+    });
+
     // Handle upload file for recommendation task
     $('#btn-upload-image').on('click', function (e) {
         e.preventDefault();
@@ -81,8 +89,11 @@ $(function () {
         }
 
         let result = imageCropper.cropper('getCroppedCanvas', {
-            maxWidth: 500,
-            maxHeight: 500,
+            // maxWidth: 1024,
+            // maxHeight: 1024,
+            minWidth: 224,
+            minHeight: 224,
+            imageSmoothingEnabled: false,
             fillColor: '#fff'
         });
 
@@ -102,7 +113,7 @@ $(function () {
                 dataType: 'json',
                 data: JSON.stringify(jsonData),
                 success: function(data) {
-                    $('#img-preview-container').addClass('hidden');
+                    $('.box-img-cropper').addClass('hidden');
                     $('#products_html').html(data['products_html']);
                     $('#recommendation-results').removeClass('hidden');
                     $('.section-main-buttons').addClass('hidden');
