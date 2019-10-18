@@ -101,9 +101,8 @@ def get_neighbors(label, input_feature_vectors, max_neighbors=14):
     
     # get the nearest neighbors of that first nearest neighbor
     ann_index_obj = ann_index[label]
-    
 
-    for item_id in ann_index_obj.get_nns_by_vector(input_feature_vectors, max_neighbors):
+    for item_id in ann_index_obj.get_nns_by_vector(input_feature_vectors, max_neighbors, search_k=10):
         # if item_id != top_1:
         results.append({
         'id': item_id,

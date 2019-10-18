@@ -261,16 +261,16 @@ Please refer to the notebook `notebook/csv_to_firestore.ipynb` to import the met
 ## Acknowledgments
 
 This project made possible by the following amazing library:
-* [Python Flask](https://github.com/pallets/flask/)  
+* [Python Flask](https://github.com/pallets/flask/)
 * [Bootstrap](https://getbootstrap.com)
 * [jQuery](https://jquery.com/)
+* [jQuery Raty](https://github.com/wbotelhos/raty)
+* [jQuery FancyBox](https://github.com/fancyapps/fancyBox)
 * [CropperJs](https://fengyuanchen.github.io/cropperjs/)
 * [TensorFlow](https://www.tensorflow.org/)
 * [Annoy](https://github.com/spotify/annoy)
 
 Reference for Machine Learning solution:
-
-
 
 Ups and downs: Modeling the visual evolution of fashion trends with one-class collaborative filtering
 R. He, J. McAuley
