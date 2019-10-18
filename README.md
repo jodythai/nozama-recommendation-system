@@ -1,10 +1,22 @@
 # Nozama: Image-based Product Recommendation System
 
-![](https://i.imgur.com/Ch8DTva.png)
+![Diagram 1: system architect](https://i.imgur.com/Ch8DTva.png)
 
 Online shopping is becoming more and more popular nowadays due to its convenience. However, finding a product is still a time-consuming and less interesting part of the online shopping journey because users are still required to type keywords describing the products as well as getting mismatched results due to the difference between users' keywords and products' description from the sellers. 
 
 One of the solutions to solve this problem is to provide to users a more intuitive way to find relevant products using image-based instead of keyword-based approach. This project will demonstrate a website application using machine learning model to recommends a list of similar products based on a given image.
+
+## How it works
+
+![](https://i.imgur.com/eJW8iMV.png)
+
+The project works based on Image Recommendation with Convolution Neural Network solution.
+
+VGG16 is a popular CNN model used for this solution, but its size is too heavy (1.1GB) for a small web app. In order to deploy the project to an affordable web application environment, my CNN model should be small enough yet still maintains its effectiveness. 
+
+I solve this problem by using Xception model from Google and reducing the computational power by running the k-NN algorithms within only one product category predicting from the classification task. With using Xception, the model size from 1.1GB to 0.1GB, enough to run the model on affordable web hosting like this GCP Free Tier AppEngine.
+
+
 
 
 ## Getting Started
