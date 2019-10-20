@@ -8,15 +8,19 @@ One of the solutions to solve this problem is to provide to users a more intuiti
 
 ## How it works
 
-![](https://i.imgur.com/eJW8iMV.png)
+![](https://i.imgur.com/r9yM2V2.png)
 
-The project works based on Image Recommendation with Convolution Neural Network solution.
+**Model:** VGG16 is a popular CNN model used for extracting feature vectors, but its size is too heavy (1.1GB) for a small web app. In order to deploy the project to an affordable web application environment, my CNN model should be small enough yet still maintains its effectiveness. I solve this problem by using Xception model from Google and reducing the computational power by running the k-NN algorithms within only one product category predicting from the classification task. By using Xception, the model size is significantly reduced from 1.1GB to 0.1GB, enough to deploy the model on affordable web hosting like Google Cloud Free Tier AppEngine.
 
-VGG16 is a popular CNN model used for this solution, but its size is too heavy (1.1GB) for a small web app. In order to deploy the project to an affordable web application environment, my CNN model should be small enough yet still maintains its effectiveness. 
+**Data sets:** My data sets contains 40k images (5000 images for each label of 8 labels).
 
-I solve this problem by using Xception model from Google and reducing the computational power by running the k-NN algorithms within only one product category predicting from the classification task. With using Xception, the model size from 1.1GB to 0.1GB, enough to run the model on affordable web hosting like this GCP Free Tier AppEngine.
+**Predict Product Category:** For the Product Classification task, I train the Xception model with transfered learning and achieve 82% validation accuracy.
 
+**Extract Feature Vectors:** The AvgGlobalPooling layer is used to extract all feature vectors of my training images and the input image.
 
+**Build k-NN indexer:** I use Annoy to build the index of all extracted feature vectors and the product ids. Annoy is a memory-optimized k-NN library, it is also used by Spotify to handle their recommendation tasks.
+
+**Using k-NN engine for similarity retrieval:** When users input (upload) an image, the system will extract the feature vectors and predict the product category that the input image belongs to. Then the k-NN engine will retrieve the nearest 30 feature vectors and their product id in the predicted product category.
 
 
 ## Getting Started
