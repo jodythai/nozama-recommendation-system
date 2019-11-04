@@ -41,7 +41,7 @@ GCP also gives you $300 free credits to use within 1 year. That's a lot of money
 
 #### The dataset
 
-If you want to train your own model using my datasets, you can download my datasets from here: [Link](https://Link)
+If you want to train your own model using my datasets, you can download my datasets from here: [Download](https://drive.google.com/file/d/1VzQKYTQzGsrChKxvLY4fYKNfYu-s2Irw/view?usp=sharing)
 
 The datasets contains 8 labels with 5,000 images each.
 
@@ -61,7 +61,7 @@ SIGIR, 2015
 
 In order to retrieve information of the products, you need to add the product's metadata to your database service. I use Google Firestore as the database service. Please refer to the notebook `notebook/csv_to_firestore.ipynb` to import the metadata to Google Firestore.
 
-Download the metadata CSV here: (https://Link)
+Download the metadata CSV here: [Download](https://drive.google.com/file/d/1rxzWS7pqG_WloSQHJKvuLwe7MbB8whrI/view?usp=sharing)
 
 [Google FireStore Documentation](https://https://firebase.google.com/docs/firestore/)
 
