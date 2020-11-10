@@ -41,7 +41,7 @@ GCP also gives you $300 free credits to use within 1 year. That's a lot of money
 
 #### The dataset
 
-If you want to train your own model using my datasets, you can download my datasets from here: [Download](https://drive.google.com/file/d/1VzQKYTQzGsrChKxvLY4fYKNfYu-s2Irw/view?usp=sharing)
+If you want to train your own model using my datasets, you can download my datasets from here: [Download](https://drive.google.com/file/d/1KoU3DCMAtGDnqK_PTboeYyK_z53sach5/view?usp=sharing)
 
 The datasets contains 8 labels with 5,000 images each.
 
@@ -243,7 +243,7 @@ In order to make recommendation engine to work, you need to deploy the recommend
 
 
 #### upload trained model and Annoy index files to GCP Bucket
--   Download trained model and Annoy index files here: [Link](https://link)
+-   Download trained model and Annoy index files here: [Link](https://drive.google.com/drive/folders/1VnE3LzukE-ugP1mj7rURsNsAE3J2DJX0?usp=sharing)
 -   Open  [Cloud Storage Browser](https://console.cloud.google.com/storage/browser)  in Google Cloud Console.
 -   Access the Bucket you created above
 -   Create 3 folders `models`, `ann_index`, and `ann_index/label_separated`
