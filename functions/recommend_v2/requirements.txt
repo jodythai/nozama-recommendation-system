@@ -31,7 +31,7 @@ requests==2.22.0
 rsa==4.0
 six==1.12.0
 tb-nightly==1.14.0a20190603
-tensorflow==2.0.0b1
+tensorflow==2.5.3
 termcolor==1.1.0
 tf-estimator-nightly==1.14.0.dev2019060501
 urllib3==1.25.3
