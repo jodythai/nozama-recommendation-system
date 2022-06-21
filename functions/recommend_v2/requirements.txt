@@ -22,7 +22,7 @@ Keras-Applications==1.0.8
 Keras-Preprocessing==1.1.0
 Markdown==3.1.1
 MarkupSafe==1.1.1
-numpy==1.17.1
+numpy==1.22.0
 protobuf==3.9.1
 pyasn1==0.4.7
 pyasn1-modules==0.2.6
